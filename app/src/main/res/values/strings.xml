@@ -1,3 +1,8 @@
 <resources>
+<!--    App   -->
     <string name="app_name">Delivery app</string>
+
+<!--    SplashActivity  -->
+    <string name="splash_description">SplashActivity logo description</string>
+    <string name="fast_delivery">Fast Delivery</string>
 </resources>
