@@ -7,4 +7,14 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <!--    one-color theme-->
+    <color name="cyan_base">#00AEE4</color>
+    <color name="cyan_hint">#0098AC</color>
+    <color name="cyan_button">#005157</color>
+
+<!--    gradients color-->
+    <color name="blue_to_emerald_grad_start">#087EE1</color>
+    <color name="blue_to_emerald_grad_end">#05E8BA</color>
+
 </resources>

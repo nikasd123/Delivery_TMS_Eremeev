@@ -1,8 +1,17 @@
 <resources>
-<!--    App   -->
+    <!--    App   -->
     <string name="app_name">Delivery app</string>
 
-<!--    SplashActivity  -->
+    <!--    SplashActivity  -->
     <string name="splash_description">SplashActivity logo description</string>
     <string name="fast_delivery">Fast Delivery</string>
+
+    <!-- registration -->
+    <string name="login">login:</string>
+    <string name="password">Password:</string>
+    <string name="login_button">login</string>
+    <string name="register">REGISTER</string>
+
+    <!-- products fragment -->
+    <string name="hello_products_fragment">Fast Delivery</string>
 </resources>
