@@ -3,6 +3,7 @@ package com.example.deliveryapp.presentation.fragments
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.widget.Toast
 import androidx.core.widget.doAfterTextChanged
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
@@ -27,24 +28,34 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
     }
 
     private fun passwordLengthCheck() {
-        binding.password.doAfterTextChanged {password ->
+        binding.password.doAfterTextChanged { password ->
             password?.length?.let {
-                if (password.length > 8) {
+                if (password.length >= 8) {
                     binding.loginButton.apply {
-                        isEnabled = true
                         navigateToProductsFragment()
                     }
+                } else {
+                    binding.loginButton.apply {
+                        smallPasswordNotification()
+                    }
                 }
-                else binding.loginButton.isEnabled = false
             }
         }
     }
 
     private fun navigateToProductsFragment() {
-        binding.loginButton.setOnClickListener{
+        binding.loginButton.setOnClickListener {
             findNavController().navigate(
                 R.id.action_registration_fragment_to_products_fragment
             )
+        }
+    }
+
+    private fun smallPasswordNotification() {
+        binding.loginButton.setOnClickListener {
+            Toast.makeText(
+                context, "password less then 8 symbols", Toast.LENGTH_LONG
+            ).show()
         }
     }
 }

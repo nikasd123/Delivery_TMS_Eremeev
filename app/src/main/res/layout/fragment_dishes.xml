@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:visibility="visible"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".presentation.fragments.DishesFragment"
+    tools:visibility="visible"
+    android:background="@drawable/gradient_cyan">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:cardCornerRadius="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_marginVertical="40dp"
+            android:layout_marginHorizontal="20dp"
+            tools:ignore="UselessLeaf" >
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+
+
+
+
+
+
+
+<!--            <androidx.cardview.widget.CardView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="250dp"-->
+<!--                app:cardCornerRadius="20dp"-->
+<!--                android:padding="50dp"-->
+<!--                app:cardBackgroundColor="@color/cyan_hint"-->
+<!--                android:contextClickable="true">-->
+
+<!--                <LinearLayout-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:orientation="vertical">-->
+
+<!--                    <ImageView-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="200dp"-->
+<!--                        android:scaleType="centerCrop"-->
+<!--                        android:contentDescription="pizza"-->
+<!--                        android:src="@drawable/pizza_background" />-->
+
+<!--                    <LinearLayout-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:orientation="horizontal"-->
+<!--                        android:gravity="center">-->
+
+<!--                        <ImageView-->
+<!--                            android:layout_width="50dp"-->
+<!--                            android:layout_height="50dp"-->
+<!--                            android:layout_gravity="center"-->
+<!--                            android:src="@drawable/pizza"/>-->
+
+<!--                        <TextView-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:text="PIZZA"-->
+<!--                            android:layout_margin="5dp"-->
+<!--                            android:fontFamily="sans-serif-black"-->
+<!--                            android:gravity="center"-->
+<!--                            android:textColor="@color/black"-->
+<!--                            android:textSize="30sp" />-->
+
+<!--                    </LinearLayout>-->
+
+<!--                </LinearLayout>-->
+
+<!--            </androidx.cardview.widget.CardView>-->
+
+
+<!--            <androidx.cardview.widget.CardView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="250dp"-->
+<!--                android:layout_marginTop="15dp"-->
+<!--                app:cardCornerRadius="20dp"-->
+<!--                android:padding="50dp"-->
+<!--                app:cardBackgroundColor="@color/cyan_hint"-->
+<!--                android:contextClickable="true">-->
+
+<!--                <LinearLayout-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:orientation="vertical">-->
+
+<!--                    <ImageView-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="200dp"-->
+<!--                        android:scaleType="centerCrop"-->
+<!--                        android:contentDescription="pizza"-->
+<!--                        android:src="@drawable/sushi_background" />-->
+
+<!--                    <LinearLayout-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:orientation="horizontal"-->
+<!--                        android:gravity="center">-->
+
+<!--                        <ImageView-->
+<!--                            android:layout_width="50dp"-->
+<!--                            android:layout_height="50dp"-->
+<!--                            android:layout_gravity="center"-->
+<!--                            android:src="@drawable/sushi"/>-->
+
+<!--                        <TextView-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:text="SUSHI"-->
+<!--                            android:layout_margin="5dp"-->
+<!--                            android:fontFamily="sans-serif-black"-->
+<!--                            android:gravity="center"-->
+<!--                            android:textColor="@color/black"-->
+<!--                            android:textSize="30sp" />-->
+
+<!--                    </LinearLayout>-->
+
+<!--                </LinearLayout>-->
+
+<!--            </androidx.cardview.widget.CardView>-->
+
+<!--            <androidx.cardview.widget.CardView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="250dp"-->
+<!--                android:layout_marginTop="15dp"-->
+<!--                app:cardCornerRadius="20dp"-->
+<!--                android:padding="50dp"-->
+<!--                app:cardBackgroundColor="@color/cyan_hint"-->
+<!--                android:contextClickable="true">-->
+
+<!--                <LinearLayout-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:orientation="vertical">-->
+
+<!--                    <ImageView-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="200dp"-->
+<!--                        android:scaleType="centerCrop"-->
+<!--                        android:contentDescription="pizza"-->
+<!--                        android:src="@drawable/drinks_background" />-->
+
+<!--                    <LinearLayout-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:orientation="horizontal"-->
+<!--                        android:gravity="center">-->
+
+<!--                        <ImageView-->
+<!--                            android:layout_width="50dp"-->
+<!--                            android:layout_height="50dp"-->
+<!--                            android:layout_gravity="center"-->
+<!--                            android:src="@drawable/cocktail"/>-->
+
+<!--                        <TextView-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:text="DRINKS"-->
+<!--                            android:layout_margin="5dp"-->
+<!--                            android:fontFamily="sans-serif-black"-->
+<!--                            android:gravity="center"-->
+<!--                            android:textColor="@color/black"-->
+<!--                            android:textSize="30sp" />-->
+
+<!--                    </LinearLayout>-->
+
+<!--                </LinearLayout>-->
+
+<!--            </androidx.cardview.widget.CardView>-->
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

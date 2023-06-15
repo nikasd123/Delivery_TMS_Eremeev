@@ -19,16 +19,24 @@
         tools:layout="@layout/fragment_login">
         <action
             android:id="@+id/action_registration_fragment_to_products_fragment"
-            app:destination="@id/products_fragment" />
+            app:destination="@id/dishes_fragment" />
     </fragment>
 
     <fragment
-        android:id="@+id/products_fragment"
-        android:name="com.example.deliveryapp.presentation.fragments.ProductsFragment"
+        android:id="@+id/dishes_fragment"
+        android:name="com.example.deliveryapp.presentation.fragments.DishesFragment"
         android:label="@string/hello_products_fragment"
-        tools:layout="@layout/fragment_products">
-<!--        <action-->
-<!--            android:id="@+id/action_chats_fragment_to_user_info_fragment"-->
-<!--            app:destination="@id/user_info_fragment" />-->
+        tools:layout="@layout/fragment_dishes">
+        <action
+            android:id="@+id/action_dishes_fragment_to_fragment_dishes_list"
+            app:destination="@id/fragment_dishes_list" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragment_dishes_list"
+        android:name="com.example.deliveryapp.presentation.fragments.DishesListFragment"
+        android:label="@string/fast_delivery"
+        tools:layout="@layout/fragment_dishes_list">
+
     </fragment>
 </navigation>
