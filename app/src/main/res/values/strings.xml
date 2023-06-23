@@ -14,6 +14,9 @@
 
     <!-- products fragment -->
     <string name="hello_products_fragment">Fast Delivery</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!-- bottom navigation -->
+    <string name="menu_list">dishes list</string>
+    <string name="menu_category">choice category</string>
+    <string name="menu_shopping_cart">shopping cart</string>
 </resources>

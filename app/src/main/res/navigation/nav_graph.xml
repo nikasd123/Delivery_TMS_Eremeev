@@ -29,7 +29,15 @@
         tools:layout="@layout/fragment_dishes">
         <action
             android:id="@+id/action_dishes_fragment_to_fragment_dishes_list"
-            app:destination="@id/fragment_dishes_list" />
+            app:destination="@id/fragment_dishes_list" >
+            <argument
+                android:name="selectedCategory"
+                app:argType="string" />
+        </action>
+        <action
+            android:id="@+id/action_dishes_fragment_to_fragment_shopping_cart"
+            app:destination="@id/fragment_shopping_cart" />
+
     </fragment>
 
     <fragment
@@ -37,6 +45,21 @@
         android:name="com.example.deliveryapp.presentation.fragments.DishesListFragment"
         android:label="@string/fast_delivery"
         tools:layout="@layout/fragment_dishes_list">
+        <argument
+            android:name="selectedCategory"
+            app:argType="string" />
 
     </fragment>
+
+    <fragment
+        android:id="@+id/fragment_shopping_cart"
+        android:name="com.example.deliveryapp.presentation.fragments.ShoppingCartFragment"
+        android:label="@string/fast_delivery"
+        tools:layout="@layout/fragment_shopping_cart">
+
+        <action
+            android:id="@+id/action_fragment_shopping_cart_to_dishes_fragment"
+            app:destination="@id/dishes_fragment" />
+    </fragment>
+
 </navigation>
