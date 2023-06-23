@@ -10,7 +10,6 @@
     <androidx.cardview.widget.CardView
         android:layout_width="wrap_content"
         android:layout_height="250dp"
-        android:contextClickable="true"
         android:padding="50dp"
         app:cardBackgroundColor="@color/cyan_hint"
         app:cardCornerRadius="20dp"
@@ -36,14 +35,16 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                tools:ignore="UseCompoundDrawables">
 
                 <ImageView
                     android:id="@+id/dish_item_text_logo"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     android:layout_gravity="center"
-                    android:src="@drawable/pizza" />
+                    android:src="@drawable/pizza"
+                    tools:ignore="ContentDescription" />
 
                 <TextView
                     android:id="@+id/dish_item_text"
