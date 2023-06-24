@@ -19,4 +19,8 @@
     <string name="menu_list">dishes list</string>
     <string name="menu_category">choice category</string>
     <string name="menu_shopping_cart">shopping cart</string>
+
+    <!-- shipping cart fragment -->
+    <string name="accept_payment">DONE</string>
+    <string name="email_hint_text">card number:</string>
 </resources>
