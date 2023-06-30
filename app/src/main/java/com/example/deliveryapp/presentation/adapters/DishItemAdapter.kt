@@ -11,7 +11,7 @@ import com.example.deliveryapp.domain.models.DomainDishes
 import com.example.deliveryapp.domain.models.DomainDishesList
 
 class DishItemAdapter(
-    private val items: List<DomainDishes>,
+    private val items: DomainDishesList,
     private val onItemClickEvent: (View, String) -> Unit,
 ) : RecyclerView.Adapter<DishItemAdapter.ViewHolder>() {
 
@@ -38,8 +38,7 @@ class DishItemAdapter(
 
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val dish = items[position]
-        //holder.bind(dish)
+        val dish = items.dishes[position]
 
         holder.apply {
             bind(dish)
@@ -51,5 +50,5 @@ class DishItemAdapter(
         }
     }
 
-    override fun getItemCount(): Int = items.size
+    override fun getItemCount(): Int = items.dishes.size
 }

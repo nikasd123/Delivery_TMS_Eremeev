@@ -8,7 +8,7 @@ import com.example.deliveryapp.domain.use_cases.DishesUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
-//@HiltViewModel
+@HiltViewModel
 class DishesViewModel @Inject constructor(
     private val dishesUseCase: DishesUseCase
 ) : ViewModel() {

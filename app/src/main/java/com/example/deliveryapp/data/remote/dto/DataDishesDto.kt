@@ -2,6 +2,7 @@ package com.example.deliveryapp.data.remote.dto
 
 import com.example.deliveryapp.domain.models.DomainDishes
 import com.example.deliveryapp.domain.models.DomainDishesList
+import com.google.gson.annotations.SerializedName
 
 data class DataDishesDto(
     val imageId: Int,

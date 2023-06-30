@@ -15,7 +15,7 @@ import com.example.deliveryapp.presentation.adapters.DishItemAdapter
 import com.example.deliveryapp.presentation.viewmodels.DishesViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
-//@AndroidEntryPoint
+@AndroidEntryPoint
 class DishesFragment : Fragment(R.layout.fragment_dishes) {
 
     private lateinit var binding: FragmentDishesBinding
@@ -37,13 +37,12 @@ class DishesFragment : Fragment(R.layout.fragment_dishes) {
     }
 
     private fun initRecycler() {
-        //val dishes = viewModel.dishesList.value ?: DomainDishesList()
+        val dishes = viewModel.dishesList.value ?: DomainDishesList()
 
         binding.recyclerView.apply {
             adapter = DishItemAdapter(
                 items = dishes,
                 onItemClickEvent = { view, category ->
-                    //findNavController().navigate(R.id.action_dishes_fragment_to_fragment_dishes_list)
                     selectedDishesCategory(view, category)
                 }
             )
@@ -52,9 +51,7 @@ class DishesFragment : Fragment(R.layout.fragment_dishes) {
 
     private fun selectedDishesCategory(view: View, selectedCategory: String) {
         when (selectedCategory) {
-            "PIZZA", "SUSHI", "DRINKS" -> {
-                navigationToDishesList(selectedCategory)
-            }
+            "PIZZA", "SUSHI", "DRINKS" -> navigationToDishesList(selectedCategory)
         }
     }
 
@@ -63,13 +60,5 @@ class DishesFragment : Fragment(R.layout.fragment_dishes) {
             selectedCategory = category
         )
         findNavController().navigate(action)
-    }
-
-    companion object {
-        val dishes: List<DomainDishes> = listOf(
-            DomainDishes(R.drawable.pizza_background, R.drawable.pizza, "PIZZA"),
-            DomainDishes(R.drawable.sushi_background, R.drawable.sushi, "SUSHI"),
-            DomainDishes(R.drawable.drinks_background, R.drawable.cocktail, "DRINKS")
-        )
     }
 }
