@@ -1,7 +1,7 @@
-package com.example.deliveryapp.domain.repository
+package com.example.deliveryapp.data.repository.local
 
 import com.example.deliveryapp.data.remote.dto.DataDishesDto
 
-interface DishesRepository {
+interface DishesLocal {
     fun getDishes(): List<DataDishesDto>
 }

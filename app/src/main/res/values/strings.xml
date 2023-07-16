@@ -23,4 +23,5 @@
     <!-- shipping cart fragment -->
     <string name="accept_payment">DONE</string>
     <string name="email_hint_text">card number:</string>
+    <string name="dish_cost">cost: 5$</string>
 </resources>

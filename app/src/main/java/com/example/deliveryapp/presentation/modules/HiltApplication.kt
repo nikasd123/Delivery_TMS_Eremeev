@@ -1,4 +1,4 @@
-package com.example.deliveryapp.presentation.activity
+package com.example.deliveryapp.presentation.modules
 
 import android.app.Application
 import dagger.hilt.android.HiltAndroidApp

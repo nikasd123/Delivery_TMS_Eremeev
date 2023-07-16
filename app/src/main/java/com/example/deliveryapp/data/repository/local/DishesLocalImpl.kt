@@ -1,9 +1,9 @@
-package com.example.deliveryapp.data.repository.remote
+package com.example.deliveryapp.data.repository.local
 
 import com.example.deliveryapp.R
 import com.example.deliveryapp.data.remote.dto.DataDishesDto
 
-class DishesRemoteImpl : DishesRemote {
+class DishesLocalImpl : DishesLocal {
     override fun getDishes(): List<DataDishesDto> =
         mutableListOf(
             DataDishesDto(

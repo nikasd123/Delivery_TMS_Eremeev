@@ -9,8 +9,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.deliveryapp.R
 import com.example.deliveryapp.databinding.FragmentDishesBinding
-import com.example.deliveryapp.domain.models.DomainDishes
-import com.example.deliveryapp.domain.models.DomainDishesList
+import com.example.deliveryapp.domain.models.DomainChoiceDishesList
 import com.example.deliveryapp.presentation.adapters.DishItemAdapter
 import com.example.deliveryapp.presentation.viewmodels.DishesViewModel
 import dagger.hilt.android.AndroidEntryPoint
@@ -37,7 +36,7 @@ class DishesFragment : Fragment(R.layout.fragment_dishes) {
     }
 
     private fun initRecycler() {
-        val dishes = viewModel.dishesList.value ?: DomainDishesList()
+        val dishes = viewModel.dishesList.value ?: DomainChoiceDishesList()
 
         binding.recyclerView.apply {
             adapter = DishItemAdapter(

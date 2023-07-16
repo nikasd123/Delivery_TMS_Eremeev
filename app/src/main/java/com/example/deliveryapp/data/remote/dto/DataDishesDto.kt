@@ -1,8 +1,7 @@
 package com.example.deliveryapp.data.remote.dto
 
-import com.example.deliveryapp.domain.models.DomainDishes
-import com.example.deliveryapp.domain.models.DomainDishesList
-import com.google.gson.annotations.SerializedName
+import com.example.deliveryapp.domain.models.DomainChoiceDishes
+import com.example.deliveryapp.domain.models.DomainChoiceDishesList
 
 data class DataDishesDto(
     val imageId: Int,
@@ -12,7 +11,7 @@ data class DataDishesDto(
 )
 
 fun DataDishesDto.toDomainDishes() =
-    DomainDishes(
+    DomainChoiceDishes(
         imageId = imageId,
         imageLogoId = imageLogoId,
         title = title,
@@ -20,7 +19,7 @@ fun DataDishesDto.toDomainDishes() =
     )
 
 fun List<DataDishesDto>.toDomainDishesList() =
-    DomainDishesList(
+    DomainChoiceDishesList(
         this.map {
             it.toDomainDishes()
         }

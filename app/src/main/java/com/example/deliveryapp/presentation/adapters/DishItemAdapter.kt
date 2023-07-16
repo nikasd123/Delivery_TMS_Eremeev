@@ -7,11 +7,11 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.deliveryapp.R
 import com.example.deliveryapp.databinding.DishesChoiceItemBinding
-import com.example.deliveryapp.domain.models.DomainDishes
-import com.example.deliveryapp.domain.models.DomainDishesList
+import com.example.deliveryapp.domain.models.DomainChoiceDishes
+import com.example.deliveryapp.domain.models.DomainChoiceDishesList
 
 class DishItemAdapter(
-    private val items: DomainDishesList,
+    private val items: DomainChoiceDishesList,
     private val onItemClickEvent: (View, String) -> Unit,
 ) : RecyclerView.Adapter<DishItemAdapter.ViewHolder>() {
 
@@ -19,7 +19,7 @@ class DishItemAdapter(
         item: View,
         private val binding: DishesChoiceItemBinding
     ) : RecyclerView.ViewHolder(item) {
-        fun bind(dish: DomainDishes) {
+        fun bind(dish: DomainChoiceDishes) {
             binding.apply {
                 dishItemImage.setImageResource(dish.imageId)
                 dishItemTextLogo.setImageResource(dish.imageLogoId)
