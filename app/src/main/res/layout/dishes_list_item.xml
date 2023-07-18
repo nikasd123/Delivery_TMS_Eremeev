@@ -40,7 +40,7 @@
                 <TextView
                     android:id="@+id/dishes_list_item_name"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="30dp"
                     android:layout_margin="5dp"
                     android:gravity="center"
                     android:text="PIZZA"
