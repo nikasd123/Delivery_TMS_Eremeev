@@ -5,17 +5,17 @@ import com.google.gson.annotations.SerializedName
 
 data class ImageDto(
     @SerializedName("id")
-    val id: Int,
+    val id: Int? = 0,
 
-    @SerializedName("src") //src
-    val url: PhotoDto, // List<PhotoDto>
+    @SerializedName("src")
+    val url: PhotoDto?,
 
     @SerializedName("alt")
-    val name: String,
+    val name: String? = "",
 )
 
 fun ImageDto.toImage(): DomainDishes {
-    val imageUrl = url.photo
+    val imageUrl = url?.photo
 
     return DomainDishes(
         id = id,

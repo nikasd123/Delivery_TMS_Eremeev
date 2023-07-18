@@ -25,7 +25,7 @@ class DishesListFragment : Fragment(R.layout.fragment_dishes_list) {
         binding = FragmentDishesListBinding.bind(view)
         val selectedCategory = args.selectedCategory
 
-        viewModel.getImagesByCategory(selectedCategory)
+        viewModel.getImagesByCategory(selectedCategory) //нельзя использовать во фрагменте (callbacks\adapter)
         Log.d("AAA", "choices category is: $selectedCategory")
 
         observeDishes()
