@@ -11,7 +11,7 @@ class ImagesUseCase @Inject constructor(
     private val imageRepository: ImageRepository
 ) {
     suspend fun getImages(category: String): List<DomainDishes> =
-        imageRepository.getImages(category).map {
+        imageRepository.getImage(category).map {
             it.toImage()
         }
 }

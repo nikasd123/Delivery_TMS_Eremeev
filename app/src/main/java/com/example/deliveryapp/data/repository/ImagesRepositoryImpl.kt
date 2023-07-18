@@ -10,6 +10,6 @@ import javax.inject.Singleton
 class ImagesRepositoryImpl @Inject constructor(
     private val imagesRemote: ImagesRemote
 ) : ImageRepository {
-    override suspend fun getImages(category: String): List<ImageDto> =
+    override suspend fun getImage(category: String): List<ImageDto> =
         imagesRemote.getImages(category).images.orEmpty()
 }
