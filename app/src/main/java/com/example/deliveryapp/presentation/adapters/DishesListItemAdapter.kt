@@ -2,15 +2,12 @@ package com.example.deliveryapp.presentation.adapters
 
 import android.annotation.SuppressLint
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.deliveryapp.R
-import com.example.deliveryapp.databinding.DishesChoiceItemBinding
 import com.example.deliveryapp.databinding.DishesListItemBinding
 import com.example.deliveryapp.domain.models.DomainDishes
-import com.example.deliveryapp.domain.models.DomainDishesList
 
 class DishesListItemAdapter(
     private var selectedCategory: String,
@@ -24,7 +21,7 @@ class DishesListItemAdapter(
         fun bind(dish: DomainDishes) {
             binding.apply {
                 dishesListItemName.text = dish.name
-                dishesListItemCost.text = "cost: 5$"
+                dishesListItemCost.text = R.string.dish_cost.toString()
 
                 Glide.with(dishesListItemImage)
                     .load(dish.url)
@@ -39,11 +36,17 @@ class DishesListItemAdapter(
                 (parent.context), parent, false
         )
 
+
+
         return ViewHolder(binding)
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.bind(dishesList[position])
+//        holder.itemView.setOnClickListener {
+//            holder[position].isChosed = true
+//             callback
+//        }
     }
 
     override fun getItemCount(): Int = dishesList.size
