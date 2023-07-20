@@ -36,16 +36,13 @@ class DishItemAdapter(
         return ViewHolder(itemView, binding)
     }
 
-
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val dish = items.dishes[position]
 
         holder.apply {
             bind(dish)
             itemView.setOnClickListener {
-                Log.d("AAA", "click on item is WORKING")
                 onItemClickEvent(it, dish.category)
-                Log.d("AAA", "navigation is WORKING")
             }
         }
     }

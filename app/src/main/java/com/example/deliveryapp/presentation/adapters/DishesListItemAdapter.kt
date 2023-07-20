@@ -36,17 +36,11 @@ class DishesListItemAdapter(
                 (parent.context), parent, false
         )
 
-
-
         return ViewHolder(binding)
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.bind(dishesList[position])
-//        holder.itemView.setOnClickListener {
-//            holder[position].isChosed = true
-//             callback
-//        }
     }
 
     override fun getItemCount(): Int = dishesList.size

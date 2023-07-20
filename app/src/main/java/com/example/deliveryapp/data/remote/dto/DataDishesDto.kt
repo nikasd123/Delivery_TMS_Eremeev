@@ -10,7 +10,7 @@ data class DataDishesDto(
     val category: String = title
 )
 
-fun DataDishesDto.toDomainDishes() =
+internal fun DataDishesDto.toDomainDishes() =
     DomainChoiceDishes(
         imageId = imageId,
         imageLogoId = imageLogoId,
@@ -18,7 +18,8 @@ fun DataDishesDto.toDomainDishes() =
         category = category
     )
 
-fun List<DataDishesDto>.toDomainDishesList() =
+
+internal fun List<DataDishesDto>.toDomainChoiceDishesList() =
     DomainChoiceDishesList(
         this.map {
             it.toDomainDishes()

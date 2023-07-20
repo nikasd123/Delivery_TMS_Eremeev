@@ -28,9 +28,9 @@ class MainActivity : AppCompatActivity() {
         navController = navHostFragment.navController
         binding.bottomNavView.setupWithNavController(navController)
 
-        Log.d("AAA", "activity creating...")
+        Log.d("AAA", "activity creating...") //WTF
         bottomNav()
-        Log.d("AAA", "Activity created successful")
+        Log.d("AAA", "Activity created successful") //WTF
     }
 
     private fun bottomNav() {

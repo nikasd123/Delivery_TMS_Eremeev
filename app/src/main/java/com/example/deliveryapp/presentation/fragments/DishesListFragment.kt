@@ -26,15 +26,14 @@ class DishesListFragment : Fragment(R.layout.fragment_dishes_list) {
         val selectedCategory = args.selectedCategory
 
         viewModel.getImagesByCategory(selectedCategory)
-        Log.d("AAA", "choices category is: $selectedCategory")
 
         observeDishes()
     }
 
     private fun observeDishes() {
-        viewModel.imagesList.observe(viewLifecycleOwner) {
-            it?.let {
-                initRecycler(it)
+        viewModel.imagesList.observe(viewLifecycleOwner) { domainDishes ->
+            domainDishes?.let {
+                initRecycler(domainDishes)
             }
         }
     }

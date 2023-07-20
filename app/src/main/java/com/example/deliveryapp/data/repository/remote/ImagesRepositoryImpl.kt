@@ -1,7 +1,6 @@
-package com.example.deliveryapp.data.repository
+package com.example.deliveryapp.data.repository.remote
 
 import com.example.deliveryapp.data.remote.dto.ImageDto
-import com.example.deliveryapp.data.repository.remote.ImagesRemote
 import com.example.deliveryapp.domain.repository.ImageRepository
 import javax.inject.Inject
 import javax.inject.Singleton

@@ -41,17 +41,15 @@ class DishesFragment : Fragment(R.layout.fragment_dishes) {
         binding.recyclerView.apply {
             adapter = DishItemAdapter(
                 items = dishes,
-                onItemClickEvent = { view, category ->
-                    selectedDishesCategory(view, category)
+                onItemClickEvent = { _, category ->
+                    selectedDishesCategory(category)
                 }
             )
         }
     }
 
-    private fun selectedDishesCategory(view: View, selectedCategory: String) {
-        when (selectedCategory) {
-            "PIZZA", "SUSHI", "DRINKS" -> navigationToDishesList(selectedCategory)
-        }
+    private fun selectedDishesCategory(selectedCategory: String) {
+        navigationToDishesList(selectedCategory)
     }
 
     private fun navigationToDishesList(category: String) {

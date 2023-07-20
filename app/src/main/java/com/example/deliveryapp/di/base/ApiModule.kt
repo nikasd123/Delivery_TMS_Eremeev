@@ -1,5 +1,6 @@
 package com.example.deliveryapp.di.base
 
+import com.example.deliveryapp.BuildConfig
 import com.example.deliveryapp.data.remote.api.PixelsApi
 import dagger.Module
 import dagger.Provides
@@ -17,7 +18,7 @@ import javax.inject.Singleton
 @InstallIn(SingletonComponent::class)
 object ApiModule {
 
-    private const val BASE_URL = "https://api.pexels.com/v1/"
+    private const val BASE_URL = BuildConfig.BASE_URL
 
     @Singleton
     @Provides

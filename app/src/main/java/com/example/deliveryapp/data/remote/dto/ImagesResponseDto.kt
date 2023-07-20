@@ -2,9 +2,10 @@ package com.example.deliveryapp.data.remote.dto
 
 import com.google.gson.annotations.SerializedName
 
-data class ResponseDto(
+
+data class ImagesResponseDto(
     @SerializedName("totalResults")
-    val totalResults: Int,
+    val totalResults: Long?,
 
     @SerializedName("photos")
     val images: List<ImageDto>?

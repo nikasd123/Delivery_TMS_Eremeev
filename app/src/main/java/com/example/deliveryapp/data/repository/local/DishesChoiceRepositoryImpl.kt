@@ -1,4 +1,4 @@
-package com.example.deliveryapp.data.repository
+package com.example.deliveryapp.data.repository.local
 
 import com.example.deliveryapp.data.remote.dto.DataDishesDto
 import com.example.deliveryapp.data.repository.local.DishesLocal

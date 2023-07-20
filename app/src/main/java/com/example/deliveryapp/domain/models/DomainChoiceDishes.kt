@@ -5,4 +5,12 @@ data class DomainChoiceDishes(
     val imageLogoId: Int,
     val title: String,
     val category: String = title
-)
+) {
+    companion object {
+        fun empty(): DomainChoiceDishes = DomainChoiceDishes(
+            imageId = 0,
+            imageLogoId = 0,
+            title = ""
+        )
+    }
+}

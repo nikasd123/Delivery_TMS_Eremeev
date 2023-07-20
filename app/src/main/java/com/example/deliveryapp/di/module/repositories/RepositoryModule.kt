@@ -1,10 +1,9 @@
 package com.example.deliveryapp.di.module.repositories
 
-import com.example.deliveryapp.data.repository.DishesChoiceRepositoryImpl
-import com.example.deliveryapp.data.repository.ImagesRepositoryImpl
+import com.example.deliveryapp.data.repository.local.DishesChoiceRepositoryImpl
+import com.example.deliveryapp.data.repository.remote.ImagesRepositoryImpl
 import com.example.deliveryapp.data.repository.local.DishesLocal
 import com.example.deliveryapp.data.repository.remote.ImagesRemote
-import com.example.deliveryapp.data.repository.remote.ImagesRemoteImpl
 import com.example.deliveryapp.domain.repository.DishesChoiceRepository
 import com.example.deliveryapp.domain.repository.ImageRepository
 import dagger.Module

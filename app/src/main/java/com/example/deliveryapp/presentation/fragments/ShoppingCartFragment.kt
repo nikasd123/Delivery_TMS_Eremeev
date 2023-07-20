@@ -20,12 +20,10 @@ class ShoppingCartFragment : Fragment(R.layout.fragment_shopping_cart) {
         binding = FragmentShoppingCartBinding.bind(view)
 
         observeAddToCart()
-//        viewModel = ViewModelProvider(requireActivity())[ShoppingCartViewModel::class.java]
-//        viewModel.
     }
 
     private fun observeAddToCart() {
-        viewModel.cartItems.observe(viewLifecycleOwner) {cartItems ->
+        viewModel.cartItems.observe(viewLifecycleOwner) { cartItems ->
             initRecycler(cartItems)
         }
     }

@@ -28,15 +28,17 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
     }
 
     private fun passwordLengthCheck() {
-        binding.password.doAfterTextChanged { password ->
-            password?.length?.let {
-                if (password.length >= 8) {
-                    binding.loginButton.apply {
-                        navigateToProductsFragment()
-                    }
-                } else {
-                    binding.loginButton.apply {
-                        smallPasswordNotification()
+        with(binding){
+            password.doAfterTextChanged { password ->
+                password?.length?.let {
+                    if (password.length >= 8) {
+                        loginButton.apply {
+                            navigateToProductsFragment()
+                        }
+                    } else {
+                        loginButton.apply {
+                            smallPasswordNotification()
+                        }
                     }
                 }
             }
@@ -45,17 +47,13 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
 
     private fun navigateToProductsFragment() {
         binding.loginButton.setOnClickListener {
-            findNavController().navigate(
-                R.id.action_registration_fragment_to_products_fragment
-            )
+            findNavController().navigate(R.id.action_registration_fragment_to_products_fragment)
         }
     }
 
     private fun smallPasswordNotification() {
         binding.loginButton.setOnClickListener {
-            Toast.makeText(
-                context, "password less then 8 symbols", Toast.LENGTH_LONG
-            ).show()
+            Toast.makeText(context, "password less then 8 symbols", Toast.LENGTH_LONG).show()
         }
     }
 }

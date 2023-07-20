@@ -1,7 +1,7 @@
 package com.example.deliveryapp.data.repository.remote
 
-import com.example.deliveryapp.data.remote.dto.ResponseDto
+import com.example.deliveryapp.data.remote.dto.ImagesResponseDto
 
 interface ImagesRemote {
-    suspend fun getImages(category: String): ResponseDto
+    suspend fun getImages(category: String): ImagesResponseDto
 }
