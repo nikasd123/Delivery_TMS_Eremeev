@@ -41,8 +41,8 @@ class DishItemAdapter(
 
         holder.apply {
             bind(dish)
-            itemView.setOnClickListener {
-                onItemClickEvent(it, dish.category)
+            itemView.setOnClickListener {view ->
+                onItemClickEvent(view, dish.category)
             }
         }
     }

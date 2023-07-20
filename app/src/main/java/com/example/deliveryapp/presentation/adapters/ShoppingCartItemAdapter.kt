@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.example.deliveryapp.R
 import com.example.deliveryapp.databinding.ShoppingCartItemBinding
 import com.example.deliveryapp.domain.models.DomainDishes
 
@@ -16,11 +17,10 @@ class ShoppingCartItemAdapter(
         private val binding: ShoppingCartItemBinding
     ) : RecyclerView.ViewHolder(binding.root) {
 
-        @SuppressLint("SetTextI18n")
         fun bind(dish: DomainDishes) {
             binding.apply {
                 dishesListItemName.text = dish.name
-                dishesListItemCost.text = "cost: 5$"
+                dishesListItemCost.text = R.string.dish_cost.toString()
 
                 Glide.with(dishesListItemImage)
                     .load(dish.url)
