@@ -22,6 +22,11 @@
 
     <!-- shipping cart fragment -->
     <string name="accept_payment">DONE</string>
-    <string name="email_hint_text">card number:</string>
+    <string name="email_hint_text">0000 0000 0000 0000</string>
     <string name="dish_cost">cost: 5$</string>
+    <string name="pizza">PIZZA</string>
+    <string name="card_mm">MM</string>
+    <string name="card_yy">YY</string>
+    <string name="name_hint">name</string>
+    <string name="lastname_hint">lastname</string>
 </resources>

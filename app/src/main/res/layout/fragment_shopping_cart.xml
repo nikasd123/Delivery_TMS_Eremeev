@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -40,7 +41,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginHorizontal="20dp"
-                    android:layout_marginVertical="40dp"
+                    android:layout_marginVertical="10dp"
                     android:orientation="vertical"
                     tools:ignore="UselessLeaf">
 
@@ -58,7 +59,7 @@
 
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
-                android:layout_height="230dp"
+                android:layout_height="200dp"
                 android:layout_marginVertical="30dp"
                 app:cardBackgroundColor="@color/gray"
                 app:cardCornerRadius="10dp"
@@ -96,7 +97,7 @@
                             android:layout_width="50dp"
                             android:layout_height="40dp"
                             android:ems="10"
-                            android:hint="MM"
+                            android:hint="@string/card_mm"
                             android:importantForAutofill="no"
                             android:inputType="number"
                             android:textColorHint="@color/cyan_hint" />
@@ -112,7 +113,7 @@
                             android:layout_width="50dp"
                             android:layout_height="40dp"
                             android:ems="10"
-                            android:hint="YY"
+                            android:hint="@string/card_yy"
                             android:importantForAutofill="no"
                             android:inputType="number"
                             android:textColorHint="@color/cyan_hint" />
@@ -130,7 +131,7 @@
                             android:layout_width="150dp"
                             android:layout_height="wrap_content"
                             android:ems="10"
-                            android:hint="name"
+                            android:hint="@string/name_hint"
                             android:importantForAutofill="no"
                             android:inputType="text"
                             android:textColorHint="@color/cyan_hint" />
@@ -140,7 +141,7 @@
                             android:layout_width="150dp"
                             android:layout_height="wrap_content"
                             android:ems="10"
-                            android:hint="lastname"
+                            android:hint="@string/lastname_hint"
                             android:importantForAutofill="no"
                             android:inputType="text"
                             android:textColorHint="@color/cyan_hint" />
@@ -152,7 +153,7 @@
             </androidx.cardview.widget.CardView>
 
             <Button
-                android:id="@+id/login_button"
+                android:id="@+id/pay_button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -163,4 +164,4 @@
 
     </androidx.cardview.widget.CardView>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

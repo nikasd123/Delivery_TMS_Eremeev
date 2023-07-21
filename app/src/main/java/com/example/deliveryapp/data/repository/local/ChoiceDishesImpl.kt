@@ -3,7 +3,7 @@ package com.example.deliveryapp.data.repository.local
 import com.example.deliveryapp.R
 import com.example.deliveryapp.data.remote.dto.DataDishesDto
 
-class DishesLocalImpl : DishesLocal {
+class ChoiceDishesImpl : ChoiceDishes {
     override fun getDishes(): List<DataDishesDto> =
         mutableListOf(
             DataDishesDto(

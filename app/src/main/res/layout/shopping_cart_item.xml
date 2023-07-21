@@ -12,20 +12,20 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginVertical="15dp"
         app:cardPreventCornerOverlap="false">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
+            android:layout_marginVertical="5dp"
             android:background="@drawable/card_view_shape">
 
             <ImageView
                 android:id="@+id/dishes_list_item_image"
                 android:layout_width="160dp"
                 android:layout_height="140dp"
-                android:contentDescription="pizza"
+                android:contentDescription="@string/pizza"
                 android:scaleType="centerCrop"
                 android:src="@drawable/pizza_background" />
 
@@ -41,7 +41,7 @@
                     android:layout_height="30dp"
                     android:layout_margin="5dp"
                     android:gravity="center"
-                    android:text="PIZZA"
+                    android:text="@string/pizza"
                     android:textColor="@color/black"
                     android:textSize="25sp" />
 

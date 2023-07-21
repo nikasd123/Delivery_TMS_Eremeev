@@ -6,7 +6,7 @@ import javax.inject.Inject
 import javax.inject.Singleton
 
 @Singleton
-class DishesUseCase @Inject constructor(
+class ChoiceDishesUseCase @Inject constructor(
     private val dishesChoiceRepository: DishesChoiceRepository
 ){
     fun getDishes() = dishesChoiceRepository.getDishes().toDomainChoiceDishesList()
