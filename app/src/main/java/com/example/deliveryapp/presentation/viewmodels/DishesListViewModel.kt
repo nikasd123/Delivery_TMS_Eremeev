@@ -7,6 +7,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.deliveryapp.domain.models.DomainDishes
 import com.example.deliveryapp.domain.use_cases.ImagesUseCase
+import com.example.deliveryapp.domain.use_cases.LocalDishesUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -14,7 +15,8 @@ import javax.inject.Inject
 @HiltViewModel
 class DishesListViewModel @Inject constructor(
     private val imagesUseCase: ImagesUseCase,
-    private val savedStateHandle: SavedStateHandle
+    private val savedStateHandle: SavedStateHandle,
+    private val dishesUseCase: LocalDishesUseCase
 ) : ViewModel() {
     private val _imagesList = MutableLiveData<List<DomainDishes>>()
     val imagesList: LiveData<List<DomainDishes>> = _imagesList
@@ -32,6 +34,12 @@ class DishesListViewModel @Inject constructor(
             categoryValue?.let { dishCategory ->
                 imagesUseCase.getImages(dishCategory)
             }
+        }
+    }
+    
+    fun addSelectedDishToCart(dish: DomainDishes) {
+        viewModelScope.launch {
+            dishesUseCase.addDish(dish)
         }
     }
 

@@ -5,13 +5,14 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.example.deliveryapp.R
 import com.example.deliveryapp.databinding.DishesListItemBinding
 import com.example.deliveryapp.domain.models.DomainDishes
+import com.example.deliveryapp.presentation.OnDishItemClickListener
 
 class DishesListItemAdapter(
     private var selectedCategory: String,
-    private val dishesList: List<DomainDishes>
+    private val dishesList: List<DomainDishes>,
+    private val onDishItemClickListener: OnDishItemClickListener
 ) : RecyclerView.Adapter<DishesListItemAdapter.ViewHolder>() {
     inner class ViewHolder(
         private val binding: DishesListItemBinding
@@ -21,7 +22,7 @@ class DishesListItemAdapter(
         fun bind(dish: DomainDishes) {
             binding.apply {
                 dishesListItemName.text = dish.name
-                dishesListItemCost.text = R.string.dish_cost.toString()
+                dishesListItemCost.text = "cost: 5$"
 
                 Glide.with(dishesListItemImage)
                     .load(dish.url)
@@ -40,7 +41,13 @@ class DishesListItemAdapter(
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.bind(dishesList[position])
+        val dish = dishesList[position]
+        holder.apply {
+            bind(dish)
+            itemView.setOnClickListener {
+                onDishItemClickListener.onDishClicked(dish)
+            }
+        }
     }
 
     override fun getItemCount(): Int = dishesList.size

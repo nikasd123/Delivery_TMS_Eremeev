@@ -8,22 +8,26 @@ import com.bumptech.glide.Glide
 import com.example.deliveryapp.R
 import com.example.deliveryapp.databinding.ShoppingCartItemBinding
 import com.example.deliveryapp.domain.models.DomainDishes
+import com.example.deliveryapp.presentation.OnDishItemClickListener
 
 class ShoppingCartItemAdapter(
-    private val cartItems: List<DomainDishes>
+    private val cartItems: List<DomainDishes>,
+    private val onDishItemClickListener: OnDishItemClickListener
 ) : RecyclerView.Adapter<ShoppingCartItemAdapter.ViewHolder>(){
 
     inner class ViewHolder(
         private val binding: ShoppingCartItemBinding
     ) : RecyclerView.ViewHolder(binding.root) {
 
+        @SuppressLint("SetTextI18n")
         fun bind(dish: DomainDishes) {
             binding.apply {
                 dishesListItemName.text = dish.name
-                dishesListItemCost.text = R.string.dish_cost.toString()
+                dishesListItemCost.text = "cost: 5$"
 
                 Glide.with(dishesListItemImage)
                     .load(dish.url)
+                    .error(R.drawable.icon_list)
                     .into(dishesListItemImage)
             }
         }
@@ -42,7 +46,13 @@ class ShoppingCartItemAdapter(
     }
 
     override fun onBindViewHolder(holder: ShoppingCartItemAdapter.ViewHolder, position: Int) {
-        holder.bind(cartItems[position])
+        val dish = cartItems[position]
+        holder.apply {
+            bind(dish)
+            itemView.setOnClickListener {
+                onDishItemClickListener.onDishClicked(dish)
+            }
+        }
     }
 
     override fun getItemCount(): Int = cartItems.size

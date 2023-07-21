@@ -1,21 +1,38 @@
 package com.example.deliveryapp.presentation.viewmodels
 
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
 import com.example.deliveryapp.domain.models.DomainDishes
+import com.example.deliveryapp.domain.use_cases.LocalDishesUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class ShoppingCartViewModel @Inject constructor() : ViewModel() {
+class ShoppingCartViewModel @Inject constructor(
+    private val dishesUseCase: LocalDishesUseCase
+) : ViewModel() {
     private val _cartItems = MutableLiveData<List<DomainDishes>>()
-    val cartItems: LiveData<List<DomainDishes>> = _cartItems
+    val cartItems: MutableLiveData<List<DomainDishes>> = _cartItems
 
-    fun addToCart(dish: DomainDishes) {
-        val currentItems = _cartItems.value.orEmpty().toMutableList()
-        currentItems.add(dish)
+    init {
+        loadCartItems()
+    }
 
-        _cartItems.value = currentItems
+    private fun loadCartItems() {
+        viewModelScope.launch {
+            val cartItemsList = dishesUseCase.getSavedDishes()
+            _cartItems.value = cartItemsList
+        }
+    }
+
+    fun removeDishFromCart(dish: DomainDishes) {
+        viewModelScope.launch {
+            dishesUseCase.removeDish(dish)
+            _cartItems.value = _cartItems.value?.filter { domainDishes ->
+                domainDishes.id != dish.id
+            }
+        }
     }
 }

@@ -1,7 +1,6 @@
 package com.example.deliveryapp.presentation.fragments
 
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
@@ -11,11 +10,12 @@ import com.example.deliveryapp.R
 import com.example.deliveryapp.databinding.FragmentDishesListBinding
 import com.example.deliveryapp.domain.models.DomainDishes
 import com.example.deliveryapp.presentation.adapters.DishesListItemAdapter
+import com.example.deliveryapp.presentation.OnDishItemClickListener
 import com.example.deliveryapp.presentation.viewmodels.DishesListViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class DishesListFragment : Fragment(R.layout.fragment_dishes_list) {
+class DishesListFragment : Fragment(R.layout.fragment_dishes_list), OnDishItemClickListener {
     private lateinit var binding: FragmentDishesListBinding
     private val args: DishesListFragmentArgs by navArgs()
     private val viewModel: DishesListViewModel by viewModels()
@@ -45,8 +45,13 @@ class DishesListFragment : Fragment(R.layout.fragment_dishes_list) {
             layoutManager = LinearLayoutManager(requireContext())
             adapter = DishesListItemAdapter(
                 dishesList = dishes,
-                selectedCategory = selectedCategory
+                selectedCategory = selectedCategory,
+                onDishItemClickListener = this@DishesListFragment
             )
         }
+    }
+
+    override fun onDishClicked(dish: DomainDishes) {
+        viewModel.addSelectedDishToCart(dish)
     }
 }
