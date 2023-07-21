@@ -3,7 +3,8 @@ package com.example.deliveryapp.di.base
 import android.content.Context
 import androidx.room.Room
 import com.example.deliveryapp.data.local.DishEntity
-import com.example.deliveryapp.data.local.DishesDatabase
+import com.example.deliveryapp.data.local.AppDatabase
+import com.example.deliveryapp.data.local.UserEntity
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -18,9 +19,9 @@ class DataBaseModule {
     @Singleton
     fun provideDataBase(
         @ApplicationContext context: Context
-    ): DishesDatabase =
+    ): AppDatabase =
         Room.databaseBuilder(
-            context, DishesDatabase::class.java,
+            context, AppDatabase::class.java,
             "dishes_db"
         )
             .fallbackToDestructiveMigration()
@@ -28,9 +29,17 @@ class DataBaseModule {
 
     @Provides
     @Singleton
-    fun provideDishDao(database: DishesDatabase) = database.dishesDao()
+    fun provideDishDao(database: AppDatabase) = database.dishesDao()
 
     @Provides
     @Singleton
     fun provideDishEntity() = DishEntity()
+
+    @Provides
+    @Singleton
+    fun provideUserDao(database: AppDatabase) = database.userDao()
+
+    @Provides
+    @Singleton
+    fun provideUserEntity() = UserEntity()
 }
