@@ -1,9 +1,12 @@
 package com.example.deliveryapp.di.module.repositories
 
-import com.example.deliveryapp.data.repository.local.DishesChoiceRepositoryImpl
-import com.example.deliveryapp.data.repository.remote.ImagesRepositoryImpl
+import com.example.deliveryapp.data.repository.DishesChoiceRepositoryImpl
+import com.example.deliveryapp.data.repository.DishesRepositoryImpl
+import com.example.deliveryapp.data.repository.ImagesRepositoryImpl
+import com.example.deliveryapp.data.repository.local.ChoiceDishes
 import com.example.deliveryapp.data.repository.local.DishesLocal
 import com.example.deliveryapp.data.repository.remote.ImagesRemote
+import com.example.deliveryapp.domain.repository.DishRepository
 import com.example.deliveryapp.domain.repository.DishesChoiceRepository
 import com.example.deliveryapp.domain.repository.ImageRepository
 import dagger.Module
@@ -16,10 +19,14 @@ import dagger.hilt.components.SingletonComponent
 class RepositoryModule {
 
     @Provides
-    fun provideDishesRepository(dishesLocal: DishesLocal): DishesChoiceRepository =
-        DishesChoiceRepositoryImpl(dishesLocal = dishesLocal)
+    fun provideChoiceDishesRepository(choiceDishes: ChoiceDishes): DishesChoiceRepository =
+        DishesChoiceRepositoryImpl(choiceDishes = choiceDishes)
 
     @Provides
     fun provideImageRepository(imagesRemote: ImagesRemote): ImageRepository =
         ImagesRepositoryImpl(imagesRemote = imagesRemote)
+
+    @Provides
+    fun provideDishesRepository(dishesLocal: DishesLocal): DishRepository =
+        DishesRepositoryImpl(dishesLocal = dishesLocal)
 }

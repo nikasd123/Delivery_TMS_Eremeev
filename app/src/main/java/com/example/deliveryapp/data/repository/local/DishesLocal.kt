@@ -1,7 +1,10 @@
 package com.example.deliveryapp.data.repository.local
 
-import com.example.deliveryapp.data.remote.dto.DataDishesDto
+import com.example.deliveryapp.data.local.DishEntity
 
 interface DishesLocal {
-    fun getDishes(): List<DataDishesDto>
+    suspend fun getSavedDishes(): List<DishEntity>
+    suspend fun insertDish(dishEntity: DishEntity)
+    suspend fun deleteDish(dishEntity: DishEntity)
+    suspend fun updateDish(dishEntity: DishEntity)
 }
