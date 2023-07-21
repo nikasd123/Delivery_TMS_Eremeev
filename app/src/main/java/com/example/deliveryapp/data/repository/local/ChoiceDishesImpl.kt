@@ -4,7 +4,7 @@ import com.example.deliveryapp.R
 import com.example.deliveryapp.data.remote.dto.DataDishesDto
 
 class ChoiceDishesImpl : ChoiceDishes {
-    override fun getDishes(): List<DataDishesDto> =
+    override fun getChoiceDishes(): List<DataDishesDto> =
         mutableListOf(
             DataDishesDto(
                 imageId = R.drawable.pizza_background,

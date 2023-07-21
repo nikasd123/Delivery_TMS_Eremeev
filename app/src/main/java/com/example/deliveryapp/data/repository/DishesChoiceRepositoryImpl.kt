@@ -10,5 +10,5 @@ import javax.inject.Singleton
 class DishesChoiceRepositoryImpl @Inject constructor(
     private val choiceDishes: ChoiceDishes
 ) : DishesChoiceRepository {
-    override fun getDishes(): List<DataDishesDto> = choiceDishes.getDishes()
+    override fun getDishes(): List<DataDishesDto> = choiceDishes.getChoiceDishes()
 }
