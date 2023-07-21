@@ -11,7 +11,7 @@ class LocalDishesUseCase @Inject constructor(
     private val dishRepository: DishRepository
 ){
     suspend fun getSavedDishes(): List<DomainDishes> = dishRepository.getSavedDishes().map {dishEntity ->
-        DomainDishes(dishEntity.id, dishEntity.url, dishEntity.name)
+        DomainDishes(id = dishEntity.id, url = dishEntity.url, name = dishEntity.name)
     }
 
     suspend fun addDish(dish: DomainDishes) {
