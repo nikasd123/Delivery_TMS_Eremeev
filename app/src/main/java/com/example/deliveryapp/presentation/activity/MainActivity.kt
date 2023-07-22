@@ -1,12 +1,16 @@
 package com.example.deliveryapp.presentation.activity
 
 import android.os.Bundle
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
 import com.example.deliveryapp.R
 import com.example.deliveryapp.databinding.ActivityMainBinding
+import com.example.deliveryapp.presentation.viewmodels.RegistrationViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -25,6 +29,9 @@ class MainActivity : AppCompatActivity() {
         navController = navHostFragment.navController
         binding.bottomNavView.setupWithNavController(navController)
 
+        binding.bottomNavView.visibility = View.GONE
+
+        isUserWasRegistered()
         bottomNav()
     }
 
@@ -44,5 +51,25 @@ class MainActivity : AppCompatActivity() {
                 else -> false
             }
         }
+    }
+
+    private fun isUserWasRegistered() {
+        val registrationViewModel = ViewModelProvider(this).get(RegistrationViewModel::class.java)
+
+        registrationViewModel.isLoggedIn.observe(this) { isLoggedIn ->
+            if (isLoggedIn) {
+                binding.bottomNavView.visibility = View.VISIBLE
+            } else {
+                binding.bottomNavView.visibility = View.GONE
+            }
+        }
+    }
+
+
+    override fun onDestroy() {
+        super.onDestroy()
+        val registrationViewModel: RegistrationViewModel =
+            ViewModelProvider(this)[RegistrationViewModel::class.java]
+        registrationViewModel.isLoggedIn.removeObservers(this)
     }
 }
