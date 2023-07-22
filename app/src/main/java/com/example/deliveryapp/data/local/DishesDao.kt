@@ -10,7 +10,7 @@ import androidx.room.Update
 @Dao
 interface DishesDao {
     @Query("SELECT * FROM dishes")
-    suspend fun getAllDishes(): List<DishEntity>//
+    suspend fun getAllDishes(): List<DishEntity>?
 
     @Query("SELECT * FROM dishes WHERE id = :dishId")
     suspend fun getDishById(dishId: Long): DishEntity?

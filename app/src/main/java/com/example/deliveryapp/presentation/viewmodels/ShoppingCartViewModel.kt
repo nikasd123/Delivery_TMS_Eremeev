@@ -13,8 +13,8 @@ import javax.inject.Inject
 class ShoppingCartViewModel @Inject constructor(
     private val dishesUseCase: LocalDishesUseCase
 ) : ViewModel() {
-    private val _cartItems = MutableLiveData<List<DomainDishes>>()
-    val cartItems: MutableLiveData<List<DomainDishes>> = _cartItems
+    private val _cartItems = MutableLiveData<List<DomainDishes>?>()
+    val cartItems: MutableLiveData<List<DomainDishes>?> = _cartItems
 
     init {
         loadCartItems()

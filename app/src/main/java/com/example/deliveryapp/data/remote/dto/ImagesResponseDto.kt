@@ -8,5 +8,5 @@ data class ImagesResponseDto(
     val totalResults: Long?,
 
     @SerializedName("photos")
-    val images: List<ImageDto>?
+    val images: List<DishImageDto>?
 )

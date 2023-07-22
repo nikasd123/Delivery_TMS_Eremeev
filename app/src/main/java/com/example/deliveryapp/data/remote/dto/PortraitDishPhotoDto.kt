@@ -2,7 +2,7 @@ package com.example.deliveryapp.data.remote.dto
 
 import com.google.gson.annotations.SerializedName
 
-data class PhotoDto(
+data class PortraitDishPhotoDto(
     @SerializedName("portrait")
-    val photo: String? = ""
+    val portraitPhoto: String? = ""
 )

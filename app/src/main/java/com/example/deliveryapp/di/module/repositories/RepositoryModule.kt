@@ -22,7 +22,7 @@ import dagger.hilt.components.SingletonComponent
 class RepositoryModule {
 
     @Provides
-    fun provideChoiceDishesRepository(choiceDishes: ChoiceDishes): DishesChoiceRepository =
+    fun provideDishesChoiceRepository(choiceDishes: ChoiceDishes): DishesChoiceRepository =
         DishesChoiceRepositoryImpl(choiceDishes = choiceDishes)
 
     @Provides
@@ -30,7 +30,7 @@ class RepositoryModule {
         ImagesRepositoryImpl(imagesRemote = imagesRemote)
 
     @Provides
-    fun provideDishesRepository(dishesLocal: DishesLocal): DishRepository =
+    fun provideDishRepository(dishesLocal: DishesLocal): DishRepository =
         DishesRepositoryImpl(dishesLocal = dishesLocal)
 
     @Provides

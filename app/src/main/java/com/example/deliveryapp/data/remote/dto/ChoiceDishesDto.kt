@@ -14,14 +14,13 @@ internal fun DataDishesDto.toDomainDishes() =
     DomainChoiceDishes(
         imageId = imageId,
         imageLogoId = imageLogoId,
-        title = title,
-        category = category
+        title = title
     )
 
 
 internal fun List<DataDishesDto>.toDomainChoiceDishesList() =
     DomainChoiceDishesList(
-        this.map {
-            it.toDomainDishes()
+        this.map {dataDishesDto ->
+            dataDishesDto.toDomainDishes()
         }
     )

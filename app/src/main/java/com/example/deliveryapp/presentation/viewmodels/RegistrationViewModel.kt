@@ -10,7 +10,7 @@ import javax.inject.Inject
 @HiltViewModel
 class RegistrationViewModel @Inject constructor(
     private val registrationUseCase: RegistrationUseCase
-): ViewModel(){
+) : ViewModel() {
     fun registerUser(login: String, password: String) {
         viewModelScope.launch {
             registrationUseCase.registerUserIfNotExists(login, password)

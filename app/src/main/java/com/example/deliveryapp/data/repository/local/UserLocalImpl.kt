@@ -6,7 +6,7 @@ import javax.inject.Inject
 
 class UserLocalImpl @Inject constructor(
     private val userDao: UserDao
-): UserLocal{
+) : UserLocal {
     override suspend fun insertUser(user: UserEntity) {
         userDao.insertUser(user = user)
     }

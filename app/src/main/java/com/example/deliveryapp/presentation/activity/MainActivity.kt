@@ -1,15 +1,12 @@
 package com.example.deliveryapp.presentation.activity
 
 import android.os.Bundle
-import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
-import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
 import com.example.deliveryapp.R
 import com.example.deliveryapp.databinding.ActivityMainBinding
-import com.google.android.material.bottomnavigation.BottomNavigationView
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -38,10 +35,12 @@ class MainActivity : AppCompatActivity() {
                     navController.navigate(R.id.dishes_fragment)
                     true
                 }
+
                 R.id.navigation_shopping_cart -> {
                     navController.navigate(R.id.fragment_shopping_cart)
                     true
                 }
+
                 else -> false
             }
         }

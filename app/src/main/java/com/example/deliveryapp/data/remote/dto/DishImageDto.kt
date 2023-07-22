@@ -4,21 +4,21 @@ import com.example.deliveryapp.domain.models.DomainDishes
 import com.google.gson.annotations.SerializedName
 
 
-data class ImageDto(
+data class DishImageDto(
     @SerializedName("id")
     val id: Long?,
 
     @SerializedName("src")
-    val url: PhotoDto?,
+    val url: PortraitDishPhotoDto?,
 
     @SerializedName("alt")
     val name: String?
 )
 
 
-internal fun ImageDto.toDomainDishes(): DomainDishes =
-     DomainDishes(
+internal fun DishImageDto.toDomainDishes(): DomainDishes =
+    DomainDishes(
         id = id,
-        url = url?.photo,
+        url = url?.portraitPhoto,
         name = name
     )

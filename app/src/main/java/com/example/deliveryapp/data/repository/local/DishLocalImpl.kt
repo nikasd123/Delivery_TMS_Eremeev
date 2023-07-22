@@ -7,7 +7,7 @@ import javax.inject.Inject
 class DishLocalImpl @Inject constructor(
     private val dishesDao: DishesDao
 ): DishesLocal{
-    override suspend fun getSavedDishes(): List<DishEntity> = dishesDao.getAllDishes()
+    override suspend fun getSavedDishes(): List<DishEntity>? = dishesDao.getAllDishes()
 
     override suspend fun insertDish(dishEntity: DishEntity) {
         dishesDao.insertDish(dishEntity = dishEntity)

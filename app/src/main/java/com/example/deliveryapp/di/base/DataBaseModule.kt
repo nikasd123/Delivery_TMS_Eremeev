@@ -2,8 +2,8 @@ package com.example.deliveryapp.di.base
 
 import android.content.Context
 import androidx.room.Room
-import com.example.deliveryapp.data.local.DishEntity
 import com.example.deliveryapp.data.local.AppDatabase
+import com.example.deliveryapp.data.local.DishEntity
 import com.example.deliveryapp.data.local.UserEntity
 import dagger.Module
 import dagger.Provides

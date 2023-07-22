@@ -8,7 +8,7 @@ import javax.inject.Inject
 class DishesRepositoryImpl @Inject constructor(
     private val dishesLocal: DishesLocal
 ): DishRepository{
-    override suspend fun getSavedDishes(): List<DishEntity> =
+    override suspend fun getSavedDishes(): List<DishEntity>? =
         dishesLocal.getSavedDishes()
 
     override suspend fun removeDish(dishEntity: DishEntity) =

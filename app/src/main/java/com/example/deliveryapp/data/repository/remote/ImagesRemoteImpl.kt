@@ -6,7 +6,7 @@ import javax.inject.Inject
 
 class ImagesRemoteImpl @Inject constructor(
     private val pixelsApi: PixelsApi
-) : ImagesRemote{
+) : ImagesRemote {
     override suspend fun getImages(category: String): ImagesResponseDto =
-        pixelsApi.getImages(category = category)
+        pixelsApi.getDishesImages(category = category)
 }

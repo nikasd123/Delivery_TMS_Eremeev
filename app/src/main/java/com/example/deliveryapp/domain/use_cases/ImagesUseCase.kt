@@ -10,8 +10,8 @@ import javax.inject.Singleton
 class ImagesUseCase @Inject constructor(
     private val imageRepository: ImageRepository
 ) {
-    suspend fun getImages(category: String): List<DomainDishes> =
-        imageRepository.getImage(category).map {imageDto ->
+    suspend fun getImages(category: String): List<DomainDishes>? =
+        imageRepository.getImage(category)?.map { imageDto ->
             imageDto.toDomainDishes()
         }
 }

@@ -1,6 +1,5 @@
 package com.example.deliveryapp.presentation.adapters
 
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -41,7 +40,7 @@ class DishItemAdapter(
 
         holder.apply {
             bind(dish)
-            itemView.setOnClickListener {view ->
+            itemView.setOnClickListener { view ->
                 onItemClickEvent(view, dish.category)
             }
         }

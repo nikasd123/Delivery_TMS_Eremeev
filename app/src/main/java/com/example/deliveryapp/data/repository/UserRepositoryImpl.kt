@@ -7,7 +7,7 @@ import javax.inject.Inject
 
 class UserRepositoryImpl @Inject constructor(
     private val userLocal: UserLocal
-): UserRepository{
+) : UserRepository {
     override suspend fun insertUser(user: UserEntity) {
         userLocal.insertUser(user)
     }

@@ -36,7 +36,7 @@ class DishesListViewModel @Inject constructor(
             }
         }
     }
-    
+
     fun addSelectedDishToCart(dish: DomainDishes) {
         viewModelScope.launch {
             dishesUseCase.addDish(dish)

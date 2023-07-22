@@ -8,6 +8,6 @@ import javax.inject.Singleton
 @Singleton
 class ChoiceDishesUseCase @Inject constructor(
     private val dishesChoiceRepository: DishesChoiceRepository
-){
+) {
     fun getDishes() = dishesChoiceRepository.getDishes().toDomainChoiceDishesList()
 }

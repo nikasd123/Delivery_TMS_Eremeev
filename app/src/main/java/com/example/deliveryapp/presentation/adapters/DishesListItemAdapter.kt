@@ -10,7 +10,6 @@ import com.example.deliveryapp.domain.models.DomainDishes
 import com.example.deliveryapp.presentation.OnDishItemClickListener
 
 class DishesListItemAdapter(
-    private var selectedCategory: String,
     private val dishesList: List<DomainDishes>,
     private val onDishItemClickListener: OnDishItemClickListener
 ) : RecyclerView.Adapter<DishesListItemAdapter.ViewHolder>() {

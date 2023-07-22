@@ -18,7 +18,7 @@ import dagger.hilt.components.SingletonComponent
 class LocalRepositoryModule {
 
     @Provides
-    fun provideChoiceDishesLocal(): ChoiceDishes = ChoiceDishesImpl()
+    fun provideChoiceDishes(): ChoiceDishes = ChoiceDishesImpl()
 
     @Provides
     fun provideDishesLocal(dishesDao: DishesDao): DishesLocal =

@@ -9,8 +9,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.deliveryapp.R
 import com.example.deliveryapp.databinding.FragmentDishesListBinding
 import com.example.deliveryapp.domain.models.DomainDishes
-import com.example.deliveryapp.presentation.adapters.DishesListItemAdapter
 import com.example.deliveryapp.presentation.OnDishItemClickListener
+import com.example.deliveryapp.presentation.adapters.DishesListItemAdapter
 import com.example.deliveryapp.presentation.viewmodels.DishesListViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -39,13 +39,10 @@ class DishesListFragment : Fragment(R.layout.fragment_dishes_list), OnDishItemCl
     }
 
     private fun initRecycler(dishes: List<DomainDishes>) {
-        val selectedCategory = args.selectedCategory
-
         binding.recyclerView.apply {
             layoutManager = LinearLayoutManager(requireContext())
             adapter = DishesListItemAdapter(
                 dishesList = dishes,
-                selectedCategory = selectedCategory,
                 onDishItemClickListener = this@DishesListFragment
             )
         }

@@ -17,7 +17,7 @@ interface PixelsApi {
 
     @Headers("$API_KEY_PARAM: $API_KEY")
     @GET(GET_IMAGES_REQUEST)
-    suspend fun getImages(
+    suspend fun getDishesImages(
         @Query(CATEGORY_PARAM) category: String
     ): ImagesResponseDto
 }

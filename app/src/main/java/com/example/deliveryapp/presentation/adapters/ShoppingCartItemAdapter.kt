@@ -13,7 +13,7 @@ import com.example.deliveryapp.presentation.OnDishItemClickListener
 class ShoppingCartItemAdapter(
     private val cartItems: List<DomainDishes>,
     private val onDishItemClickListener: OnDishItemClickListener
-) : RecyclerView.Adapter<ShoppingCartItemAdapter.ViewHolder>(){
+) : RecyclerView.Adapter<ShoppingCartItemAdapter.ViewHolder>() {
 
     inner class ViewHolder(
         private val binding: ShoppingCartItemBinding

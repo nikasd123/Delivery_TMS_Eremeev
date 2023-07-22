@@ -29,7 +29,7 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
     }
 
     private fun navigateToProductsFragment() {
-        with(binding){
+        with(binding) {
             loginButton.setOnClickListener {
                 val login = login.text.toString()
                 val password = password.text.toString()

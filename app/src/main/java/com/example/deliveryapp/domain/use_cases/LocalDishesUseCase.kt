@@ -9,10 +9,11 @@ import javax.inject.Singleton
 @Singleton
 class LocalDishesUseCase @Inject constructor(
     private val dishRepository: DishRepository
-){
-    suspend fun getSavedDishes(): List<DomainDishes> = dishRepository.getSavedDishes().map {dishEntity ->
-        DomainDishes(id = dishEntity.id, url = dishEntity.url, name = dishEntity.name)
-    }
+) {
+    suspend fun getSavedDishes(): List<DomainDishes>? =
+        dishRepository.getSavedDishes()?.map { dishEntity ->
+            DomainDishes(id = dishEntity.id, url = dishEntity.url, name = dishEntity.name)
+        }
 
     suspend fun addDish(dish: DomainDishes) {
         val dishEntity = DishEntity(name = dish.name, url = dish.url, id = dish.id)
