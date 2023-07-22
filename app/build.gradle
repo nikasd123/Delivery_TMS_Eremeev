@@ -101,6 +101,11 @@ dependencies {
     implementation 'androidx.navigation:navigation-fragment:2.6.0'
     implementation "androidx.navigation:navigation-ui-ktx:2.6.0"
 
+    //JUnitTest
+    testImplementation 'junit:junit:4.13.2'
+    testImplementation 'org.mockito:mockito-core:3.12.4'
+    testImplementation 'org.assertj:assertj-core:3.20.2'
+
     implementation 'androidx.recyclerview:recyclerview:1.3.0'
     implementation 'com.github.javafaker:javafaker:1.0.2'
     implementation 'androidx.core:core-ktx:1.10.1'
