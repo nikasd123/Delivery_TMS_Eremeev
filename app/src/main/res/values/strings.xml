@@ -29,4 +29,5 @@
     <string name="card_yy">YY</string>
     <string name="name_hint">name</string>
     <string name="lastname_hint">lastname</string>
+    <string name="cart_is_empty">looks like your cart is empty...</string>
 </resources>

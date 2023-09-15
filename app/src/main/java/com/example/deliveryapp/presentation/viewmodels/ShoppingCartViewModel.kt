@@ -27,6 +27,8 @@ class ShoppingCartViewModel @Inject constructor(
         }
     }
 
+    fun isShoppingCartEmpty(): Boolean = cartItems.value.isNullOrEmpty()
+
     fun removeDishFromCart(dish: DomainDishes) {
         viewModelScope.launch {
             dishesUseCase.removeDish(dish)

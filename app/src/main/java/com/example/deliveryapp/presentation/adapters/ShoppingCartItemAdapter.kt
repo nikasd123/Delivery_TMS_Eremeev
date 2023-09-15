@@ -5,7 +5,6 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.example.deliveryapp.R
 import com.example.deliveryapp.databinding.ShoppingCartItemBinding
 import com.example.deliveryapp.domain.models.DomainDishes
 import com.example.deliveryapp.presentation.OnDishItemClickListener
@@ -27,7 +26,6 @@ class ShoppingCartItemAdapter(
 
                 Glide.with(dishesListItemImage)
                     .load(dish.url)
-                    .error(R.drawable.icon_list)
                     .into(dishesListItemImage)
             }
         }

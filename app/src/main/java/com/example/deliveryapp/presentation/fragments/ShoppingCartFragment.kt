@@ -24,6 +24,7 @@ class ShoppingCartFragment : Fragment(R.layout.fragment_shopping_cart), OnDishIt
         super.onViewCreated(view, savedInstanceState)
         binding = FragmentShoppingCartBinding.bind(view)
 
+        isCartEmpty()
         observeAddToCart()
         initFun()
     }
@@ -34,7 +35,7 @@ class ShoppingCartFragment : Fragment(R.layout.fragment_shopping_cart), OnDishIt
     }
 
     private fun observeAddToCart() {
-        viewModel.cartItems.observe(viewLifecycleOwner) { cartItems ->
+        viewModel.cartItems.observe(viewLifecycleOwner) {cartItems ->
             cartItems?.let { initRecycler(cartItems) }
         }
     }
@@ -92,6 +93,20 @@ class ShoppingCartFragment : Fragment(R.layout.fragment_shopping_cart), OnDishIt
                 .setMessage("Order paid")
                 .setPositiveButton(android.R.string.ok, null)
                 .show()
+        }
+    }
+
+    private fun isCartEmpty() {
+        with(binding) {
+            viewModel.cartItems.observe(viewLifecycleOwner){
+                if (viewModel.isShoppingCartEmpty()) {
+                    emptyCartLayout.visibility = View.VISIBLE
+                    filledCartLayout.visibility = View.GONE
+                } else {
+                    emptyCartLayout.visibility = View.GONE
+                    filledCartLayout.visibility = View.VISIBLE
+                }
+            }
         }
     }
 }
